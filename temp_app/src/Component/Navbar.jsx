@@ -6,6 +6,9 @@
         import {FaCartPlus, FaHamburger, FaMoon, FaSun}  from 'react-icons/fa'
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { LogibContext } from '../Context/LogibContext';
+import instialState from '../Context/LogibContext'
 
 
 
@@ -15,12 +18,17 @@ function Navbar(props) {
     const isDark=colorMode==='dark'
     const navigate = useNavigate();
     const { isOpen, onToggle } = useDisclosure();
+    const{state,dispatcher} =useContext(LogibContext,instialState)
+    console.log(state)
     return (
        
                 <Flex
                 as="nav"
                 align="center"
                 justify="space-between"
+                zIndex={6}
+                backdropBlur="18px"
+                boxShadow='dark-lg'
                 
                 w="100%"
                 h="100px"
@@ -59,7 +67,9 @@ function Navbar(props) {
 
                   <HStack>
                     <Box display={{base: "none", md:"block"  }}>
-                        <Button onClick={()=>{navigate('/login')}}>Login/SignUP</Button>
+                       {!state.isAouth && <Button onClick={()=>{navigate('/login')}}>Login/SignUP</Button>}
+                       {state.isAouth && <Button onClick={()=>dispatcher({type:"logout", isAouth:false,
+                        isName:""})}>Logout</Button>}
                     </Box>
                     <Box display={{base:"block" , md: "block", lg:"none" }} icon={<FaHamburger/>}> <IconButton icon={<FaHamburger/>}  ></IconButton></Box>
                   </HStack>
