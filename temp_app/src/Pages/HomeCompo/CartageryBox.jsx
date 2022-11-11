@@ -10,10 +10,10 @@ function CartageryBox(props) {
    const navigate=useNavigate()
      
     return (
-        <Grid w={"80%"} mt={"50px"}  border={"1px solid black"}  pt={8}
+        <Grid w={"80%"} mt={"50px"}  pt={10} mb={"100px"}
          
         >
-              <SimpleGrid columns={{ base: 3, md: 5 }} spacing={{ base: 5, lg: 8 }}>
+              <SimpleGrid columns={{ base: 3, md: 5 }} paddingBottom={"150px"} paddingTop={"150px"} spacing={{ base: 5, lg: 8 }}>
             <Box onClick={()=>{
                 dispatcher({
                    type:  "catagery",
