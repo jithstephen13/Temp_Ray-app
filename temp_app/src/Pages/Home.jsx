@@ -1,8 +1,11 @@
-import { VStack } from '@chakra-ui/react';
+import { Stack, VStack } from '@chakra-ui/react';
 import React from 'react';
+import Aboute from '../Component/Aboute';
 import AddCursor from './HomeCompo/AddCursor';
 import CartageryBox from './HomeCompo/CartageryBox';
-import ProductCursel from './HomeCompo/ProductCursel';
+import HighlitedProduct from './HomeCompo/HighlitedProduct';
+
+ 
 
 
 
@@ -10,14 +13,18 @@ function Home(props) {
 
     
     return (
-        <VStack>
+        <>
+        <VStack marginBottom={"100px"}>
             <h1>welcome home</h1>
             <AddCursor/>
             <CartageryBox/>
-            <ProductCursel/>
-           
             
-        </VStack>
+        </VStack  >
+        <HighlitedProduct/> 
+        <Aboute/>
+            
+        
+        </>
     );
 }
 

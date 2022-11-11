@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import { CartContex } from '../Context/CartContex';
-import instialState from '../Context/CartContex';
-
-
+import {   Stack, Text } from "@chakra-ui/react";
+import {motion} from 'framer-motion'
 import {
     Flex,
     Circle,
@@ -14,42 +12,28 @@ import {
     chakra,
     Tooltip,
   } from '@chakra-ui/react';
-  import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
-  import { FiShoppingCart } from 'react-icons/fi';
-import CartageryBox from '../Pages/HomeCompo/CartageryBox';
-  
+import { FiShoppingCart } from 'react-icons/fi';
+import { CartContex } from '../../Context/CartContex';
+
+import instialState from '../../Context/CartContex';
+
   const data = {
     isNew: true,
     
   };
 
 
-function CardProduct(props) {
-
-    const{minRentAmount,name,productImages}=props
-     
+function HighCard(props) {
+    const {   productImages
+        , name ,minRentAmount} = props
+    console.log(props)
 
     const{state,dispatcher}=useContext(CartContex,instialState)
 
     return (
-        
-        <Flex p={50} w="full" alignItems="center" justifyContent="center">
-      <Box
-        bg={useColorModeValue('white', 'gray.800')}
-        maxW="sm"
-        borderWidth="1px"
-        rounded="lg"
-        shadow="lg"
-        position="relative">
-        {data.isNew && (
-          <Circle
-            size="10px"
-            position="absolute"
-            top={2}
-            right={2}
-            bg="red.200"
-          />
-        )}
+        <Box  h={"350px"} w={"200px"}  bg={"red.200"}  >
+              <motion.div  border={"1px solid black"}>
+       
 
         <Image
           src={`https:${productImages}-500x500.jpg`}
@@ -57,51 +41,52 @@ function CardProduct(props) {
           roundedTop="lg"
         />
 
-        <Box p="6">
+        <div width="100%"  >
           <Box d="flex" alignItems="baseline">
             
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
                 New
               </Badge>
-        
-          </Box>
-          <Flex mt="1" justifyContent="space-between" alignContent="center">
+        <Flex mt="1" justifyContent="space-evenly" alignContent="center">
             <Box
-              fontSize="2xl"
-              fontWeight="semibold"
-              as="h4"
+              fontSize="s"
+              
+              as="h6"
               lineHeight="tight"
               isTruncated>
               {name}
             </Box>
             <Tooltip
               label="Add to cart"
-              bg="white"
+              bg="red"
               placement={'top'}
               color={'gray.800'}
               fontSize={'1.2em'}>
-              <chakra.a href={'#'} display={'flex'}>
+              <div display={'flex'}>
                 <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}   onClick={()=>{
                   console.log(props) 
                   dispatcher({ type:"AddCart",payload:props})
                 }} />
-              </chakra.a>
+              </div>
             </Tooltip>
           </Flex>
+          </Box>
+          
 
-          <Flex justifyContent="space-between" alignContent="center">
+          <Flex   alignContent="center">
             
-            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+            <Box fontSize="xl" color={useColorModeValue('gray.800', 'white')}>
               <Box as="span" color={'gray.600'} fontSize="lg">
-                Rent
+                Rent===
               </Box>
               {minRentAmount}
             </Box>
           </Flex>
-        </Box>
+        </div>
+      </motion.div>
+          
       </Box>
-    </Flex>
     );
 }
 
-export default CardProduct;
+export default HighCard;

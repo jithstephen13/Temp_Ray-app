@@ -19,7 +19,7 @@ function Navbar(props) {
     const navigate = useNavigate();
     const { isOpen, onToggle } = useDisclosure();
     const{state,dispatcher} =useContext(LogibContext,instialState)
-    console.log(state)
+     
     return (
        
                 <Flex
@@ -29,7 +29,7 @@ function Navbar(props) {
                 zIndex={6}
                 backdropBlur="18px"
                 boxShadow='dark-lg'
-                
+                bg={"gray.800"}
                 w="100%"
                 h="100px"
                 
@@ -61,7 +61,7 @@ function Navbar(props) {
 
                   </Box>
 
-                  <HStack  onClick={toggleColorMode} border={"1px solid  black"} p='5px' borderRadius={"20px"} >
+                  <HStack  onClick={()=>{navigate('/cart')}} border={"1px solid  black"} p='5px' borderRadius={"20px"} >
                   <IconButton  icon={ <FaCartPlus/>}  ></IconButton><p>Cart</p>
                   </HStack>
 
