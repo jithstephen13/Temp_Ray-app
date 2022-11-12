@@ -1,6 +1,8 @@
 import { Stack, VStack } from '@chakra-ui/react';
 import React from 'react';
 import Aboute from '../Component/Aboute';
+import Review from '../Component/Revew';
+import RewContr from '../Component/RewContr';
 import AddCursor from './HomeCompo/AddCursor';
 import CartageryBox from './HomeCompo/CartageryBox';
 import HighlitedProduct from './HomeCompo/HighlitedProduct';
@@ -22,6 +24,8 @@ function Home(props) {
         </VStack  >
         <HighlitedProduct/> 
         <Aboute/>
+        <RewContr/>
+        
             
         
         </>

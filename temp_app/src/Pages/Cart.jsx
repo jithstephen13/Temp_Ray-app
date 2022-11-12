@@ -34,7 +34,7 @@ function Cart(props) {
         px={{
           base: '4',
           md: '8',
-          lg: '12',
+          lg: '5',
         }}
         py={{
           base: '6',
@@ -60,7 +60,7 @@ function Cart(props) {
           <Stack
             spacing={{
               base: '8',
-              md: '10',
+              md: '5',
             }}
             flex="2"
           >
@@ -75,7 +75,7 @@ function Cart(props) {
             </Stack>
           </Stack>
     
-          <Flex direction="column"   bg={"yellow.200"} p={5} >
+          <Flex direction="column"  w={"40%"} bg={"yellow.200"} p={1} >
             <CartOrderSummary />
             <HStack mt="6"  fontWeight="semibold">
               <p>or</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Admin from '../Admin/Admin';
 import Cart from '../Pages/Cart';
 import Catogery from '../Pages/Catogery';
 import Home from '../Pages/Home';
@@ -15,7 +16,7 @@ function AllRoutes(props) {
             <Route path='/cart'  element={<Cart/>}  />
             <Route  path='/Catogery' element={<Catogery/>} />
             <Route path='/Catogery/Productes'  element={<Productes/>} />
-            
+            <Route  path='/admin'  element={<Admin/>} />            
         </Routes>
     );
 }

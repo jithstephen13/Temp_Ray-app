@@ -22,7 +22,7 @@ import axios from 'axios';
 async function getData(state,dispatcher) {
   try {
 
-    const response = await axios.get(`http://localhost:8080/Productes`);
+    const response = await axios.get(`https://backmock-app.onrender.com/Productes`); 
      
      dispatcher({
       type:"CompleteData",
