@@ -12,8 +12,7 @@ import SocialProfileWithImage from '../Component/ProductCard';
 async function getUser(setData,state) {
     try {
 
-      const response = await axios.get(`http://localhost:8080/${state.catagery}`);
-      
+      const response = await axios.get(`http://localhost:8080/${state.catagery}`); 
       setData(response.data)
     } catch (error) {
       console.error(error);
@@ -29,8 +28,6 @@ function Catogery(props) {
     },[])
     
 
-    
-  
     return (
         <div>
           <Flex  margin={"20px"}>
