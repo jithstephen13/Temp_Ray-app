@@ -22,7 +22,7 @@ async function getData(state,dispatcher) {
     try {
 
       const{subCatagery}=state
-      const response = await axios.get(`http://localhost:8080/Productes?filterSlug=${subCatagery} `);
+      const response = await axios.get(`https://backmock-app.onrender.com/Productes?filterSlug=${subCatagery} `);
      console.log(response.data)
        dispatcher({
         type:"SubData",
@@ -45,19 +45,19 @@ async function getData(state,dispatcher) {
 
 function Productes(props) {
      const{state,dispatcher}=useContext(CatgortContex,instialState)
-   
+    console.log(state)
     
     useEffect(()=>{
        getData(state,dispatcher)
        console.log(state)
     },[])
     console.log(state)
- const{CompleteData}=state
+ const{SubData}=state
     return (
         <SimpleGrid  columns={[1, 2, 3]} spacing='40px'>
            
             {
-                CompleteData.map((item)=>{
+                SubData.map((item)=>{
                    return <CardProduct  key={item.id}  {...item}/>
                 })
             }

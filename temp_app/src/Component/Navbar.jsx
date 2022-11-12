@@ -3,7 +3,7 @@
         import { Box, Button, Flex, HStack, Img, Input, Select, useDisclosure} from '@chakra-ui/react'
         import Temp_Ray from '../imges/Temp_Ray.png'
         import {  IconButton, useColorMode, VStack } from '@chakra-ui/react';
-        import {FaCartPlus, FaHamburger, FaMoon, FaSun}  from 'react-icons/fa'
+        import {FaCartPlus, FaHamburger, FaMoon, FaSun, FaUser}  from 'react-icons/fa'
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
@@ -19,7 +19,7 @@ function Navbar(props) {
     const navigate = useNavigate();
     const { isOpen, onToggle } = useDisclosure();
     const{state,dispatcher} =useContext(LogibContext,instialState)
-     
+   
     return (
        
                 <Flex
@@ -43,7 +43,7 @@ function Navbar(props) {
           
                 <Flex m={"auto"} width={"80%"} h="100%"   align="center"  justify="space-between"  >
         
-                  <Box h={"100%"}>
+                  <Box h={"100%"} onClick={()=>{navigate('/')}} >
                     <Img src={Temp_Ray} h={'100%'} />
                   </Box >
                   <Box h={"100%"}  display={{base: "none", md:"block"  }}>
@@ -71,6 +71,10 @@ function Navbar(props) {
                        {state.isAouth && <Button onClick={()=>dispatcher({type:"logout", isAouth:false,
                         isName:""})}>Logout</Button>}
                     </Box>
+                    {state.isName==="jith" &&<Box color={"whatsapp.500"}> <IconButton  onClick={()=>{
+                        navigate('/admin')
+                       
+                     }} icon={<FaUser/>}  ></IconButton><button>Admin</button> </Box>} 
                     <Box display={{base:"block" , md: "block", lg:"none" }} icon={<FaHamburger/>}> <IconButton icon={<FaHamburger/>}  ></IconButton></Box>
                   </HStack>
 

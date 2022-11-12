@@ -31,7 +31,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 async function getData(state,dispatcher) {
     try {
   
-      const response = await axios.get(`http://localhost:8080/Productes`);
+      const response = await axios.get(`https://backmock-app.onrender.com/Productes`);
        
        dispatcher({
         type:"CompleteData",
@@ -84,7 +84,10 @@ async function getData(state,dispatcher) {
     },[])
      const{CompleteData}=state
   return ( 
-    <>
+    <> 
+     <p id='text11'>You'll love to
+take these home</p>
+
     <Swiper
       slidesPerView={1}
       spaceBetween={10}
@@ -114,6 +117,7 @@ async function getData(state,dispatcher) {
       className="mySwiper"
     >
 
+    
 
 
             {

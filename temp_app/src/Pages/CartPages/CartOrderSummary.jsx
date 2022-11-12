@@ -2,6 +2,7 @@ import {
     Button,
     Flex,
     Heading,
+    Input,
     Link,
     Stack,
     Text,
@@ -51,6 +52,8 @@ import { useNavigate } from 'react-router-dom'
               {state.reduce((a,c)=>a+c.minRentAmount,0)}
             </Text>
           </Flex>
+          <Input bg={"gray.800"} placeholder='Name' />
+          <Input bg={"gray.800"} placeholder='Address..' />
         </Stack>
         <Button colorScheme="blue" size="lg" fontSize="md" rightIcon={<FaArrowRight />}
         onClick={()=>{
