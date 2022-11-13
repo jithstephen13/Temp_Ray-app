@@ -70,7 +70,7 @@ function Cart(props) {
     
             <Stack spacing="6">
               {state.map((item) => (
-                <CartItem key={item.id} {...item} />
+                <CartItem key={Math.random()*10} {...item} />
               ))}
             </Stack>
           </Stack>

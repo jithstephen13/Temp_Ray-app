@@ -58,7 +58,7 @@ function Productes(props) {
            
             {
                 SubData.map((item)=>{
-                   return <CardProduct  key={item.id}  {...item}/>
+                   return <CardProduct  key={Math.random()*6}  {...item}/>
                 })
             }
             </SimpleGrid>

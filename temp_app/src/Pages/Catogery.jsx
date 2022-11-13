@@ -39,7 +39,7 @@ function Catogery(props) {
             
             <SimpleGrid  columns={[1, 2, 3]} spacing='40px'>
  {
-              data.map((item)=> {return <SocialProfileWithImage  {...item}/>  })
+              data.map((item)=> {return <SocialProfileWithImage key={Math.random()*10}  {...item}/>  })
             }
 
             </SimpleGrid>
