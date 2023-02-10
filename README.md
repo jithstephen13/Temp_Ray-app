@@ -22,3 +22,65 @@ This Project was individually built by me and it was completed within just 5 day
 
 <br />
 #  Features: Home Page, Admin page, Login/Sign up Page,Navbar,Product page, Cart Page , Footer
+
+- Our LOGO :
+   <img width="40%" src="./src/assets/logo.png">
+<br />
+
+
+## Tech-Stack:
+
+- React.js
+- React Routing
+- React Redux
+- React Redux Thunk
+- CSS
+- HTML
+- Chakra UI Library
+- Firebase
+
+
+Glimpse and Screenshots of our cloned website:
+
+## Navbar:
+
+
+<img width="50%" src="./temp_app/src/imges/navbar.png">
+
+## Home Page:
+
+
+<img width="50%" src="./temp_app/src/imges/homepage.png">
+
+
+
+
+## Product categery:
+
+
+
+<img width="50%" src="./temp_app/src/imges/categery.png">
+
+## Product Sub-categery:
+
+
+
+<img width="50%" src="./temp_app/src/imges/subcategery product.png">
+
+
+## Pdoduct Detailes Page:
+
+ 
+
+<img width="50%" src="./temp_app/src/imges/product.png">
+
+## Cart 
+
+<img width="50%" src="./temp_app/src/imges/cart.png">
+
+
+## Admin:
+
+- 
+
+<img width="50%" src="./src/assets/Screenshot 2023-01-22 213046.png">
