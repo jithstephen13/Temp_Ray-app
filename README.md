@@ -79,8 +79,4 @@ Glimpse and Screenshots of our cloned website:
 <img width="50%" src="./temp_app/src/imges/cart.png">
 
 
-## Admin:
 
-- 
-
-<img width="50%" src="./src/assets/Screenshot 2023-01-22 213046.png">
