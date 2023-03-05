@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios'
 import {
   Progress,
@@ -28,20 +28,25 @@ import {
 import { useToast } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { LogibContext } from '../Context/LogibContext';
+import instialState from '../Context/LogibContext';
 
 async function postUser( mobile,
     email,
     firstname,
-    lastname,navigate) {
+    lastname,navigate,dispatcher) {
     try {
-      const response = await axios.post('http://localhost:5000/user',{
+      const response = await axios.post('https://backmock-app.onrender.com/user',{
         mobile,
         email,
         firstname,
         lastname
       });
        console.log(response)
-       navigate('/')
+       dispatcher({type:"login",isAouth:true,
+       payload:firstname})
+        navigate("/")
+        
       
     } catch (error) {
       console.error(error);
@@ -59,6 +64,8 @@ const Form3 = ({mobile, email, setEmail, firstname,setFirstname, lastname, setla
     lastname)
     
     setShow(!show)};
+
+    
   return (
     <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -132,7 +139,7 @@ const Form1 = ({setMobile}) => {
 
 async function getUser(setUser) {
     try {
-      const response = await axios.get('http://localhost:5000/user',{
+      const response = await axios.get('https://backmock-app.onrender.com/user',{
         params: {
             _page:1,
             _limit:10
@@ -153,11 +160,14 @@ const Form2 = ({mobile,user,setUser}) => {
         getUser(setUser)
 
     },[])
-
+const{state,dispatcher} =useContext(LogibContext,instialState)
 setTimeout(() => {
     user.forEach((item)=>{
         if(item.mobile==mobile){
-            navigate("/")
+           
+            dispatcher({type:"login",isAouth:true,
+             payload:user.firstname})
+              navigate("/")
         }
     })
     
@@ -232,14 +242,14 @@ export default function Login() {
   const [email,setEmail]=useState('')
   const[user,setUser]=useState([])
   const navigate = useNavigate();
-
+const{state,dispatcher} =useContext(LogibContext,instialState)
 const handleClick =()=>{
      postUser( mobile,
     email,
     firstname,
-    lastname,navigate)
+    lastname,navigate,dispatcher)
 }
- 
+
 
   return (
     <>
