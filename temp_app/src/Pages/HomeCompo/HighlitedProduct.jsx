@@ -31,7 +31,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 async function getData(state,dispatcher) {
     try {
   
-      const response = await axios.get(`http://localhost:8080/Productes`);
+      const response = await axios.get(`https://backmock-app.onrender.com/Productes`);
        
        dispatcher({
         type:"CompleteData",
@@ -84,7 +84,10 @@ async function getData(state,dispatcher) {
     },[])
      const{CompleteData}=state
   return ( 
-    <>
+    <> 
+     <p id='text11'>You'll love to
+take these home</p>
+
     <Swiper
       slidesPerView={1}
       spaceBetween={10}
@@ -114,12 +117,13 @@ async function getData(state,dispatcher) {
       className="mySwiper"
     >
 
+    
 
 
             {
                 CompleteData.map((item)=>{
                    return( 
-                    <SwiperSlide key={item.id}> 
+                    <SwiperSlide key={Math.random()*10}> 
                     
                     <Box  h={"350px"} w={"90%"}   >
               <div  border={"1px solid "}>
@@ -143,7 +147,7 @@ async function getData(state,dispatcher) {
               
               as="h6"
               lineHeight="tight"
-              isTruncated>
+               >
               {item.name}
             </Box>
             <Tooltip

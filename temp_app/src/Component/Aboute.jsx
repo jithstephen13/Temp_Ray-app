@@ -27,7 +27,7 @@ import {
         <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
          {title}
         </StatNumber>
-        <StatLabel fontWeight={'medium'} isTruncated>
+        <StatLabel fontWeight={'medium'} >
            {stat}
         </StatLabel>
         

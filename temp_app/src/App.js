@@ -7,6 +7,7 @@ import Footer from "./Component/Footer";
 
 
 
+
 function App() {
 
  
@@ -16,6 +17,7 @@ function App() {
       {/* <Login/> */}
       <AllRoutes/>
       <Footer/>
+      
       
       
     </VStack>

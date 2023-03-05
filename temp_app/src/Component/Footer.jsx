@@ -58,7 +58,7 @@ import {
       <Box
         width={"100%"}
          paddingTop={"150px"}
-        bg={useColorModeValue('gray.50', 'gray.900')}
+        bg={useColorModeValue('grey.500', 'grey.500')}
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid
