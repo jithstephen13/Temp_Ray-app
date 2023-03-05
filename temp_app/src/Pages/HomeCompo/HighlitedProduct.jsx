@@ -123,7 +123,7 @@ take these home</p>
             {
                 CompleteData.map((item)=>{
                    return( 
-                    <SwiperSlide key={item.id}> 
+                    <SwiperSlide key={Math.random()*10}> 
                     
                     <Box  h={"350px"} w={"90%"}   >
               <div  border={"1px solid "}>
@@ -147,7 +147,7 @@ take these home</p>
               
               as="h6"
               lineHeight="tight"
-              isTruncated>
+               >
               {item.name}
             </Box>
             <Tooltip

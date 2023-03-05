@@ -18,8 +18,6 @@ const instialState={
         return{
            isAouth:true,
            isName:action.payload
-
-
         }}
     case "logout":{
         return{
@@ -41,10 +39,8 @@ function LogibContextProvider({children}) {
 
      const [state,dispatcher]=useReducer(reducer,instialState)
      const value={state,dispatcher}
-    return (
-        <LogibContext.Provider value={value}>{children}
-            
-        </LogibContext.Provider>
+       return (
+        <LogibContext.Provider value={value}>{children} </LogibContext.Provider>
     );
 }
 

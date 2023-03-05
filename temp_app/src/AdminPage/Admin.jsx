@@ -36,7 +36,7 @@ async function getUser(setUser) {
     }
   }
 
-function Admin(props) {
+function AdminPage(props) {
 
     const[User,setUser]=useState([])
     const[Product,setProduct]=useState([])
@@ -71,4 +71,4 @@ function Admin(props) {
     );
 }
 
-export default Admin;
+export default AdminPage;

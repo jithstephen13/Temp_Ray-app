@@ -3,7 +3,7 @@ import Login from "./Pages/Login";
 import Navbar from "./Component/Navbar";
 import AllRoutes from "./Component/AllRoutes";
 import Footer from "./Component/Footer";
-import Admin from "./Admin/Admin";
+
 
 
 

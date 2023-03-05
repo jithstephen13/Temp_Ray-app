@@ -20,7 +20,6 @@ function Home(props) {
             <h1>welcome home</h1>
             <AddCursor/>
             <CartageryBox/>
-            
         </VStack  >
         <HighlitedProduct/> 
         <Aboute/>

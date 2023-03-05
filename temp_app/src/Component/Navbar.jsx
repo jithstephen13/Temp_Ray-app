@@ -9,6 +9,7 @@ import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { LogibContext } from '../Context/LogibContext';
 import instialState from '../Context/LogibContext'
+import { useState } from 'react';
 
 
 
@@ -19,6 +20,7 @@ function Navbar(props) {
     const navigate = useNavigate();
     const { isOpen, onToggle } = useDisclosure();
     const{state,dispatcher} =useContext(LogibContext,instialState)
+    const[cart,setCart]=useState(false)
    
     return (
        
@@ -47,7 +49,7 @@ function Navbar(props) {
                     <Img src={Temp_Ray} h={'100%'} />
                   </Box >
                   <Box h={"100%"}  display={{base: "none", md:"block"  }}>
-                    <Button display={{base: "none", md:"block"  }} h="100%" bg="tranceparent">Location</Button>
+                    <Button display={{base: "none", md:"block"  }} bg={"white"} h="100%" color={"blackAlpha.400"}  >Location</Button>
         
                   </Box>
                   <Box h={"100%"} w={"30%"}>
@@ -61,8 +63,10 @@ function Navbar(props) {
 
                   </Box>
 
-                  <HStack  onClick={()=>{navigate('/cart')}} border={"1px solid  black"} p='5px' borderRadius={"20px"} >
-                  <IconButton  icon={ <FaCartPlus/>}  ></IconButton><p>Cart</p>
+                  <HStack  onClick={()=>{navigate('/cart')
+                           setCart(!cart)
+                }} border={"1px solid  black"} p='5px' borderRadius={"20px"} >
+                 {cart ?<Flex ><IconButton  icon={ <FaCartPlus/>}  ></IconButton><p>Cart</p></Flex> :<Flex><p>Cart</p><IconButton  icon={ <FaCartPlus/>}  ></IconButton></Flex>  } 
                   </HStack>
 
                   <HStack>

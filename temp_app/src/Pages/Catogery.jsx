@@ -12,8 +12,10 @@ import SocialProfileWithImage from '../Component/ProductCard';
 async function getUser(setData,state) {
     try {
 
+
       const response = await axios.get(`https://backmock-app.onrender.com/${state.catagery}`);
       
+
       setData(response.data)
     } catch (error) {
       console.error(error);
@@ -29,8 +31,6 @@ function Catogery(props) {
     },[])
     
 
-    
-  
     return (
         <div>
           <Flex  margin={"20px"}>
@@ -39,7 +39,7 @@ function Catogery(props) {
             
             <SimpleGrid  columns={[1, 2, 3]} spacing='40px'>
  {
-              data.map((item)=> {return <SocialProfileWithImage  {...item}/>  })
+              data.map((item)=> {return <SocialProfileWithImage key={Math.random()*10}  {...item}/>  })
             }
 
             </SimpleGrid>

@@ -27,7 +27,7 @@ import {
         <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
          {title}
         </StatNumber>
-        <StatLabel fontWeight={'medium'} isTruncated>
+        <StatLabel fontWeight={'medium'} >
            {stat}
         </StatLabel>
         
@@ -56,7 +56,6 @@ to renting
           <StatsCard title={'Cancel anytime'}  icon={"https://www.clipartmax.com/png/small/40-401653_booking-of-e-appointment-for-pr-application-return-exchange-form-icon.png"}  stat={"Pay only for the time you use the product and close your subscription without any hassle.." } />
           <StatsCard title={'Easy return on delivery'}   icon={"https://www.clipartmax.com/png/small/53-532806_undo-arrow-of-circular-shape-with-half-broken-line-return-icon-free.png"}  stat={'If you dont like the product on delivery, you can return it right away—no questions asked'} />
           <StatsCard title={'Free maintenance'} icon={"https://www.clipartmax.com/png/middle/63-634014_user-maintenance-icon.png"} stat={'Keeping your rented products in a spick and span condition is onus, so you can sit back and relax. '} />
-          
         </SimpleGrid>
       </Box>
     );
