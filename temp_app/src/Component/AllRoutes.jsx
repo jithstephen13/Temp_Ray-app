@@ -15,8 +15,10 @@ function AllRoutes(props) {
             <Route  path='/login'   element={<Login/>} />
             <Route path='/cart'  element={<Cart/>}  />
             <Route  path='/Catogery' element={<Catogery/>} />
+
             <Route path='/Catogery/Productes'  element={<Productes/>} />
             <Route  path='/admin'  element={<Admin/>} />            
+
         </Routes>
     );
 }

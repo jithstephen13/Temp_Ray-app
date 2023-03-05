@@ -12,8 +12,10 @@ import SocialProfileWithImage from '../Component/ProductCard';
 async function getUser(setData,state) {
     try {
 
+
       const response = await axios.get(`https://backmock-app.onrender.com/${state.catagery}`);
       
+
       setData(response.data)
     } catch (error) {
       console.error(error);
@@ -29,8 +31,6 @@ function Catogery(props) {
     },[])
     
 
-    
-  
     return (
         <div>
           <Flex  margin={"20px"}>
