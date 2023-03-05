@@ -71,5 +71,4 @@ function CatgortContexProvider({children}) {
         </CatgortContex.Provider>
     );
 }
-
 export default CatgortContexProvider;

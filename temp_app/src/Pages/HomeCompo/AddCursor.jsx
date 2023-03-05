@@ -16,11 +16,11 @@ function AddCursor(props) {
   <Carousel  borderRadius="20px" >
     {Images.map((item, i) => (
       <img
-
+    
      
         draggable="false"
         src={item.url}
-        key={i}
+        key={Math.random()*10}
         width="100%"
          interval="2000"
         alt=""

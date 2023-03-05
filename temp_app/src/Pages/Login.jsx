@@ -36,7 +36,7 @@ async function postUser( mobile,
     firstname,
     lastname,navigate,dispatcher) {
     try {
-      const response = await axios.post('http://localhost:8080/user',{
+      const response = await axios.post('https://backmock-app.onrender.com/user',{
         mobile,
         email,
         firstname,
@@ -139,7 +139,7 @@ const Form1 = ({setMobile}) => {
 
 async function getUser(setUser) {
     try {
-      const response = await axios.get('http://localhost:5000/user',{
+      const response = await axios.get('https://backmock-app.onrender.com/user',{
         params: {
             _page:1,
             _limit:10
