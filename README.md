@@ -79,4 +79,4 @@ Glimpse and Screenshots of our cloned website:
 <img width="50%" src="./temp_app/src/imges/cart.png">
 
 
-
+jith Stephen
