@@ -30,9 +30,6 @@ const instialState=[]
    }
 }
 
-
-
-
 export const CartContex = React.createContext()
 
 
